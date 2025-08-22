@@ -1,2 +1,378 @@
-# PLEXSUS-website
-A digital marketing company’s website.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLEXSUS - Digital Marketing Agency</title>
+    <style>
+        /* Embedded from style.css */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Lato", sans-serif;
+        }
+        .header {
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(https://uploads.onecompiler.io/43s2hu3pn/43s2ezp5c/IMG_5140.jpeg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav img {
+            width: 130px;
+            height: 90px;
+        }
+        .nav-links {
+            flex: 1;
+            text-align: right;
+        }
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .nav-links ul li::after {
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+        .text-box {
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .text-box h1 {
+            font-size: 60px;
+        }
+        .text-box p {
+            margin: 10px 0 40px;
+            font-size: 14px;
+            color: #fff;
+        }
+        .hero-btn {
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+        .hero-btn:hover {
+            border: 1px solid #f44336;
+            background: #f44336;
+            transition: 1s;
+        }
+        nav .fa {
+            display: none;
+        }
+        @media(max-width: 700px) {
+            .text-box h1 {
+                font-size: 20px;
+            }
+            .nav-links ul li {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                background: #f44336;
+                height: 100vh;
+                width: 200px;
+                top: 0;
+                right: -200px;
+                text-align: left;
+                z-index: 2;
+                transition: 1s;
+            }
+            nav .fa {
+                display: block;
+                color: #fff;
+                margin: 10px;
+                font-size: 22px;
+                cursor: pointer;
+            }
+            .nav-links ul {
+                padding: 30px;
+            }
+            .row {
+                flex-direction: column;
+            }
+            .Plan-col {
+                margin-bottom: 20px;
+            }
+        }
+        .Plans {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+        }
+        p {
+            color: #777;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+        .row {
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .Plan-col {
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        h3 {
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        .Plan-col:hover {
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+        }
+        @media(max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+        .cta {
+            margin: 100px auto;
+            width: 80%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://uploads.onecompiler.io/43s2hu3pn/43s2ezp5c/70bcbfe6-d592-4454-b941-f1e98ab770c2.jpeg);
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .cta h2 {
+            color: #fff;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+        @media(max-width: 700px) {
+            .cta h2 {
+                font-size: 19px;
+            }
+        }
+        .Blog {
+            text-align: center;
+            padding-top: 60px;
+            padding-bottom: 30px;
+            margin: 10px auto;
+            max-width: 900px;
+        }
+        @media (min-width: 1024px) {
+            .Blog {
+                padding: 80px 40px;
+                text-align: center;
+            }
+            .Blog h2,
+            .Blog h4 {
+                text-align: center;
+            }
+        }
+        .Blog p {
+            font-size: 1.2rem;
+            color: #777;
+            text-align: center;
+        }
+        .Blog a {
+            color: #f44336;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .Blog a:hover {
+            text-decoration: underline;
+        }
+        .about-container {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .about-container h4 {
+            margin-bottom: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        .footer {
+            padding: 50px 40px;
+            text-align: center;
+        }
+        .footer .icons {
+            display: inline-block;
+        }
+        .footer .icons .fa {
+            color: #f44336;
+            margin: 0 13px;
+            cursor: pointer;
+            padding: 18px 0;
+        }
+        .footer .fa-heart-o {
+            color: #f44336;
+        }
+        .footer p {
+            text-align: center;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- PAGE CONTENT SAME AS YOUR THIRD FILE -->
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="https://uploads.onecompiler.io/43s2hu3pn/43s2ezp5c/IMG_5137.jpeg"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#plans">Plans</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Digital Marketing Agency</h1>
+            <p>NOW YOU DON'T HAVE TO WORRY ABOUT YOUR BUSINESS'S<br>DIGITAL MARKETING.</p>
+            <a href="contact.html" class="hero-btn">Contact Us To Know More</a>
+        </div>
+    </section>
+    <section class="Plans" id="plans">
+        <h1>Plans We Offer:</h1>
+        <p>
+            Weekly Ads Package - "Social Ad Boost"
+            <br>2 weeks Social Media Marketing Campaign
+            <br>Starter / Basic Retainer Package
+        </p>
+        <div class="row">
+            <div class="Plan-col">
+                <h3>Weekly Ads Package - "Social Ad Boost"</h3>
+                <p>Price: $2000 per week x 4 = $8000/month
+                    <br>Includes:
+                    <br>• Setup and management of ad campaigns on up to 3 platforms (e.g. Facebook, Instagram, TikTok or LinkedIn)
+                    <br>• Ad creative alignment with your brand (headlines, images, calls-to-action)
+                    <br>• Campaign monitoring, A/B testing of creatives or copy
+                    <br>• Weekly performance summary (reach, clicks, conversions)
+                    <br>• Optional add-on: Advanced analytics or segmentation for an extra fee
+                </p>
+            </div>
+            <div class="Plan-col">
+                <h3>Starter / Basic Retainer Package</h3>
+                <p>Price: $500-$800/month - suitable for solo entrepreneurs or first-time ad budgets
+                    <br>Includes:
+                    <br>• Management of 1 platform
+                    <br>• 6-8 custom posts per month (graphics + copy)
+                    <br>• Basic community engagement (liking + replies)
+                    <br>• Monthly performance reporting
+                </p>
+            </div>
+            <div class="Plan-col">
+                <h3>2 weeks Social Media Marketing Campaign</h3>
+                <p>Price: $5,000 flat fee
+                    <br>Includes:
+                    <br>• Development of a focused campaign strategy aligned with client goals (e.g. product launch, lead generation)
+                    <br>• Creative package: 2 weeks of graphics, short-form videos, copywriting
+                    <br>• Paid ads management (setup, optimization)
+                    <br>• Community engagement (comments, DMs)
+                    <br>• Final deliverables: campaign recap + ROI summary at project completion
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="Blog" id="blog">
+        <h2>Blog Title:</h2>
+        <h4>5 Simple Ways To Grow Your Business With Digital Marketing.</h4><br>
+        <h4>Posted By: PLEXSUS Team</h4><br>
+        <h4>Blog Content:</h4>
+        <p>In today's digital world, having an online presence is not just a choice - it's a must. Whether you're a small business owner, a startup founder, or just starting your brand, digital marketing can help you reach more people and grow faster than ever. At PLEXSUS, we believe in making marketing simple and powerful. Here are 5 easy ways to grow your business using digital marketing:</p>
+        <h4>1. Create a Website That Works for You</h4>
+        <p>Your website is your digital home. Make sure it looks clean, works well on phones, and clearly tells people what you do. Add a "Contact" or "Book Now" button to help visitors reach you easily.</p>
+        <h4>2. Use Social Media to Stay Active</h4>
+        <p>Be where your audience is! Platforms like Instagram, Facebook, and LinkedIn are great places to connect with customers, share updates, and show off your products or services.</p>
+        <h4>3. Start an Email List</h4>
+        <p>Email is still one of the most powerful tools. Collect emails through your website and send newsletters, offers, or tips regularly to stay in touch with your audience.</p>
+        <h4>4. Invest in SEO (Search Engine Optimization)</h4>
+        <p>If your website doesn't show up on Google, you're missing out. SEO helps your website appear when people search for things you offer. Use the right keywords, write helpful content, and make your website fast and mobile-friendly.</p>
+        <h4>5. Run Simple Ads</h4>
+        <p>Paid ads on Google or social media can bring fast results. Even with a small budget, you can target the right people and bring more visitors to your website or page.</p>
+        <h4>Final Thoughts:</h4>
+        <p>Digital marketing is not about doing everything at once. It's about doing the right things the right way. If you're not sure where to start, PLEXSUS is here to help. Whether it's building your brand, creating content, or running ads - we've got your back.</p>
+        <h3>Ready to grow your business?</h3>
+        <a href="contact.html">Contact Us Today</a>
+    </section>
+    <section class="cta" id="contact">
+        <h2>We would love to hear from you!
+            Contact PLEXSUS today to discuss how our tailored solutions can help your business reach new heights. Our dedicated team is ready to answer your questions, provide expert guidance, and support your growth objectives. Don't miss out on the opportunity to accelerate your success - reach out to us now!</h2>
+        <a href="contact.html" class="hero-btn">CONTACT US</a>
+    </section>
+    <section class="about-container" id="about">
+        <h4>ABOUT US</h4>
+        <p>We are a passionate digital marketing company helping businesses grow online. Our team creates smart strategies to boost your brand, attract more customers, and increase sales. From social media to SEO, we use the latest tools to get real results. Whether you are just starting or want to scale up, we are here to support your journey every step of the way.</p>
+    </section>
+    <footer class="footer">
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart-o"></i> by PLEXSUS Team</p>
+    </footer>
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>
