@@ -1,0 +1,144 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact PLEXSUS - Digital Marketing Agency</title>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        } 
+        .contact-form {
+            background: #fff;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 28px;
+        }
+        .contact-form h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #f44336;
+            font-size: 18px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: "Lato", sans-serif;
+            box-sizing: border-box;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #f44336;
+            outline: none;
+            box-shadow: 0 0 5px rgba(244, 67, 54, 0.3);
+        }
+        .button-container {
+            margin-top: 25px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: "Lato", sans-serif;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #d73227;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #f44336;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <h3>info.plexsus@gmail.com</h3>
+        <form action="https://formspree.io/f/mdkdqekr" method="post">
+            
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="First Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="Last Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="plan">Select a Plan:</label>
+                <select id="plan" name="Selected Plan">
+                    <option value="none">None</option>
+                    <option value="weekly_ads">Weekly Ads Package - "Social Ad Boost"</option>
+                    <option value="basic_retainer">Starter / Basic Retainer Package</option>
+                    <option value="2_week_campaign">2 weeks Social Media Marketing Campaign</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message (Optional):</label>
+                <textarea id="message" name="Message" rows="5" placeholder="Tell us about your business and how we can help you..."></textarea>
+            </div>
+
+            <!-- Hidden field to redirect back to contact page after submission -->
+            <input type="hidden" name="_next" value="http://localhost:5000/contact.html" />
+            
+            <div class="button-container">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+        
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </div>
+</body>
+</html>
